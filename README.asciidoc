@@ -1,0 +1,22 @@
+Minsk
+=====
+Kyle Coffey
+:toc:
+:icons:
+:numbered:
+:website: https://phytolizer.dev
+
+Minsk is a programming language, originally written in C# by Immo Landwerth.
+This is my attempt to reimplement its functionality in Ruby.
+
+Dependencies
+------------
+* Ruby v3.0.2
+
+Usage
+-----
+Install deps: `gem install bundler && bundle install`.
+
+Run `bundle exec rake` to run the tests.
+
+Run `bundle exec rake run` to run the REPL.
