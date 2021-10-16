@@ -19,6 +19,7 @@ GEM
       ast (~> 2.4.1)
     racc (1.5.2)
     rainbow (3.0.0)
+    rake (13.0.6)
     regexp_parser (2.1.1)
     reverse_markdown (2.0.0)
       nokogiri
@@ -60,6 +61,7 @@ PLATFORMS
 
 DEPENDENCIES
   minitest
+  rake
   solargraph
 
 BUNDLED WITH
