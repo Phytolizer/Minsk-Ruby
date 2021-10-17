@@ -2,16 +2,24 @@
 
 require_relative "code_analysis/syntax/lexer"
 
+def pretty_print(node, indent = "")
+  print indent
+  print node.kind
+
+  print " #{node.value}" if node.instance_of?(SyntaxToken) && !node.value.nil?
+
+  indent += "    "
+  node.children.each do |child|
+    pretty_print(child, indent)
+  end
+end
+
 loop do
   print ">> "
   line = gets
   break if line.nil?
 
-  lexer = Lexer.new(line.chomp)
-  loop do
-    tok = lexer.next_token
-    break if tok.kind == :EndOfFileToken
-
-    puts "#{tok.kind} '#{tok.text}' #{tok.value}"
-  end
+  parser = Parser.new(line)
+  expression = parser.parse
+  pretty_print(expression)
 end
